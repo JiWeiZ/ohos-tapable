@@ -1,0 +1,58 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "/Users/bytedance/.ohos/config/default_MyApplication_f_q7cWavTpNWMz9yfNc-1UuSQ-DvQuNhve_wKQ5aEv0=.cer",
+          "storePassword": "0000001B50BA93697EFE924BD3BEE29A2D760D9F63793DB5AC19A1836520A1542419F4BB9CF6EDF220A58F",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001B031129EDF4972ADA54BC0E18A660004630A558A649A95FBD813A67AB7F3E2D2C7EF7718BD66BDC",
+          "profile": "/Users/bytedance/.ohos/config/default_MyApplication_f_q7cWavTpNWMz9yfNc-1UuSQ-DvQuNhve_wKQ5aEv0=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "/Users/bytedance/.ohos/config/default_MyApplication_f_q7cWavTpNWMz9yfNc-1UuSQ-DvQuNhve_wKQ5aEv0=.p12"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "compatibleSdkVersion": "5.0.0(12)",
+        "runtimeOS": "HarmonyOS",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true
+          }
+        }
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug",
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        },
+      ]
+    },
+    {
+      "name": "tapable",
+      "srcPath": "./tapable"
+    }
+  ]
+}

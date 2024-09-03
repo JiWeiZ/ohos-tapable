@@ -1,0 +1,35 @@
+{
+  "name": "tapable",
+  "version": "2.2.1",
+  "author": "ZhaoJiWei",
+  "description": "Just a little module for plugins.",
+  "license": "MIT",
+  "homepage": "https://github.com/JiWeiZ/ohos-tapable",
+  "repository": "https://github.com/JiWeiZ/ohos-tapable.git",
+  "engines": {
+    "node": ">=6"
+  },
+  "files": [
+    "lib",
+    "!lib/__tests__",
+    "tapable.d.ts"
+  ],
+  "main": "lib/index.js",
+  "types": "./tapable.d.ts",
+  "scripts": {
+    "test": "jest",
+    "travis": "yarn pretty-lint && jest --coverage && codecov",
+    "pretty-lint": "prettier --check lib/*.js lib/__tests__/*.js",
+    "pretty": "prettier --loglevel warn --write lib/*.js lib/__tests__/*.js"
+  },
+  "jest": {
+    "transform": {
+      "__tests__[\\\\/].+\\.js$": "babel-jest"
+    }
+  },
+  "dependencies": {
+    "@ohos/axios": "^2.2.3"
+  },
+  "devDependencies": {},
+  "dynamicDependencies": {}
+}

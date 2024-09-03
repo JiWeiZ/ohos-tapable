@@ -1,0 +1,11 @@
+{
+  "module": {
+    "name": "tapable",
+    "type": "har",
+    "deviceTypes": [
+      "default",
+      "tablet",
+      "2in1"
+    ]
+  },
+}
