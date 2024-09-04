@@ -1,6 +1,6 @@
 {
   "name": "tapable",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "author": "ZhaoJiWei",
   "description": "Just a little module for plugins.",
   "license": "MIT",
@@ -27,9 +27,7 @@
       "__tests__[\\\\/].+\\.js$": "babel-jest"
     }
   },
-  "dependencies": {
-    "@ohos/axios": "^2.2.3"
-  },
+  "dependencies": {},
   "devDependencies": {},
   "dynamicDependencies": {}
 }
