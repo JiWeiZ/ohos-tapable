@@ -17,10 +17,6 @@ class Hook {
     };
   }
 
-  call() {
-    throw new Error("call is not implemented");
-  }
-
   callAsync() {
     throw new Error("callAsync is not implemented");
   }

@@ -6,7 +6,7 @@
   "author": "",
   "license": "",
   "dependencies": {
-    "tapable": "file:../tapable.har"
+    "tapable": "file:../tapable"
   },
   "devDependencies": {},
   "dynamicDependencies": {}
