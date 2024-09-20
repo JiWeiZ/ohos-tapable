@@ -1,12 +1,19 @@
 # CHANGELOG
+## [V2.2.4] 2024-09
+### 修复
+- 修复了拦截器不存在 call、done 等方法时的异常
+
+### 新增
+- 新增 HookInterceptor 的 register 方法的第二个参数
+- 新增 registerGlobalInterceptor 方法
 
 ## [V2.2.3] 2024-09
 ### 修复
-移除了 AsyncHook 的 call 方法
+- 移除了 AsyncHook 的 call 方法
 
 ## [V2.2.2] 2024-09
 ### 修复
-移除了不必要的依赖 @ohos/axios
+- 移除了不必要的依赖 @ohos/axios
 
 ## [V2.2.1] 2024-09
 

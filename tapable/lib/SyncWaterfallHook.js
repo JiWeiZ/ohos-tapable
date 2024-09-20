@@ -1,6 +1,10 @@
 import SyncBaseHook from "./SyncBaseHook";
 
 class SyncWaterfallHook extends SyncBaseHook {
+    constructor(...args) {
+        super(...args)
+    }
+
     call(...args) {
         const hookOptions = this.getOptions("sync");
         let arg0 = args[0];

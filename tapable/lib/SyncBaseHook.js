@@ -1,6 +1,10 @@
 import Hook from "./Hook";
 
 class SyncBaseHook extends Hook {
+  constructor(...args) {
+    super(...args)
+  }
+
   tapAsync() {
     throw new Error(`tapAsync is not supported on a ${this.constructor.name}`);
   }

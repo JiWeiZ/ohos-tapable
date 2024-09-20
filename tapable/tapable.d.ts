@@ -50,7 +50,7 @@ interface HookInterceptor<T, R, AdditionalOptions = UnsetAdditionalOptions> {
   error?: (err: Error) => void;
   result?: (result: R) => void;
   done?: () => void;
-  register?: (tap: FullTap & IfSet<AdditionalOptions>) => FullTap & IfSet<AdditionalOptions>;
+  register?: (tap: FullTap & IfSet<AdditionalOptions>, hook: Hook<T, R, AdditionalOptions>) => FullTap & IfSet<AdditionalOptions>;
 }
 
 type ArgumentNames<T extends any[]> = FixedSizeArray<T["length"], string>;
@@ -114,3 +114,5 @@ export class MultiHook<H> {
   tapAsync(options: string | Tap, fn?: Function): void;
   tapPromise(options: string | Tap, fn?: Function): void;
 }
+
+export const registerGlobalInterceptor: <T, R, AdditionalOptions = UnsetAdditionalOptions>(id: string, interceptor: HookInterceptor<T, R, AdditionalOptions>) => void;

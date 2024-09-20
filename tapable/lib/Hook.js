@@ -1,3 +1,5 @@
+import { globalInterceptors } from "./globalInterceptors";
+
 "use strict";
 
 class Hook {
@@ -5,7 +7,7 @@ class Hook {
     this._args = args;
     this.name = name;
     this.taps = [];
-    this.interceptors = [];
+    this.interceptors = globalInterceptors.value;
   }
 
   getOptions(type) {
@@ -59,7 +61,7 @@ class Hook {
   _runRegisterInterceptors(options) {
     for (const interceptor of this.interceptors) {
       if (interceptor.register) {
-        const newOptions = interceptor.register(options);
+        const newOptions = interceptor.register(options, this);
         if (newOptions !== undefined) {
           options = newOptions;
         }
@@ -90,7 +92,7 @@ class Hook {
     this.interceptors.push(Object.assign({}, interceptor));
     if (interceptor.register) {
       for (let i = 0; i < this.taps.length; i++) {
-        this.taps[i] = interceptor.register(this.taps[i]);
+        this.taps[i] = interceptor.register(this.taps[i], this);
       }
     }
   }
@@ -131,27 +133,27 @@ class Hook {
   }
 
   executeInterceptorsCall(_callArgs) {
-    this.interceptors.forEach((e) => e.call(..._callArgs));
+    this.interceptors.forEach((e) => e.call?.(..._callArgs));
   }
 
   executeInterceptorsTap(tap) {
-    this.interceptors.forEach((e) => e.tap(tap));
+    this.interceptors.forEach((e) => e.tap?.(tap));
   }
 
   executeInterceptorsError(err) {
-    this.interceptors.forEach((e) => e.error(err));
+    this.interceptors.forEach((e) => e.error?.(err));
   }
 
   executeInterceptorsDone() {
-    this.interceptors.forEach((e) => e.done());
+    this.interceptors.forEach((e) => e.done?.());
   }
 
   executeInterceptorsLoop(_callArgs) {
-    this.interceptors.forEach((e) => e.loop(..._callArgs));
+    this.interceptors.forEach((e) => e.loop?.(..._callArgs));
   }
 
   executeInterceptorsResult(res) {
-    this.interceptors.forEach((e) => e.result(res));
+    this.interceptors.forEach((e) => e.result?.(res));
   }
 }
 

@@ -1,6 +1,10 @@
 import AsyncBaseHook from "./AsyncBaseHook";
 
 class AsyncSeriesHook extends AsyncBaseHook {
+  constructor(...args) {
+    super(...args)
+  }
+
   callAsync(...args) {
     const hookOptions = this.getOptions("async");
 

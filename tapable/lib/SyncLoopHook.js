@@ -1,6 +1,10 @@
 import SyncBaseHook from "./SyncBaseHook";
 
 class SyncLoopHook extends SyncBaseHook {
+  constructor(...args) {
+    super(...args)
+  }
+
   call(...args) {
     const hookOptions = this.getOptions("sync");
     const _callArgs = args.slice(0, hookOptions.args.length);
